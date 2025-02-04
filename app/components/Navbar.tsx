@@ -32,22 +32,61 @@ const Navbar = () => {
 
           {/* Navigation Links - Desktop */}
           <div className="hidden md:flex items-center space-x-1">
-            {[
-              { href: '/', label: 'Home' },
-              { href: '/sermons', label: 'Sermons' },
-              { href: '/events', label: 'Events' },
-              { href: '/pastor', label: 'Pastor' },
-              { href: '/about', label: 'About' },
-              { href: '/contact', label: 'Contact Us' },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md hover:bg-gray-100/80 transition-all duration-300"
-              >
-                {link.label}
-              </Link>
-            ))}
+            <Link href="/" className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md hover:bg-gray-100/80 transition-all duration-300">
+              Home
+            </Link>
+            <Link href="/sermons" className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md hover:bg-gray-100/80 transition-all duration-300">
+              Sermons
+            </Link>
+            <Link href="/events" className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md hover:bg-gray-100/80 transition-all duration-300">
+              Events
+            </Link>
+            
+            {/* Branches Dropdown */}
+            <div className="relative group">
+              <button className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md hover:bg-gray-100/80 transition-all duration-300 flex items-center space-x-1">
+                <span>Branches</span>
+                <svg 
+                  className="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {/* Dropdown Menu */}
+              <div className="absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-2">
+                <div className="py-1">
+                  <Link href="/branches/central" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    Central Branch
+                  </Link>
+                  <Link href="/branches/north" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    North Branch
+                  </Link>
+                  <Link href="/branches/south" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    South Branch
+                  </Link>
+                  <Link href="/branches/east" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    East Branch
+                  </Link>
+                  <Link href="/branches/west" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    West Branch
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <Link href="/pastor" className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md hover:bg-gray-100/80 transition-all duration-300">
+              Pastor
+            </Link>
+            <Link href="/about" className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md hover:bg-gray-100/80 transition-all duration-300">
+              About
+            </Link>
+            <Link href="/contact" className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-md hover:bg-gray-100/80 transition-all duration-300">
+              Contact Us
+            </Link>
           </div>
 
           {/* Donate Button - Desktop */}
